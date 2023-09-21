@@ -1,0 +1,152 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: white;
+  background-color: #b9aaaa;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.current-weather-container {
+  margin-left: 90px;
+  padding: 20px 25px;
+  min-height: 250px;
+  min-width: 250px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  opacity: 0.7;
+
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+
+.card {
+  min-width: 250px;
+  border-radius: 16px;
+  box-shadow: 0px 0px 8px 0px grey;
+  text-align: center;
+}
+
+.card-header {
+  text-align: center;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.card-title {
+  margin-top: 0;
+  padding: 16px;
+  color: rgb(219, 103, 178);
+  font-size: 40px;
+}
+
+.container-temperature {
+  font-size: 60px;
+  
+  color: rgb(228, 165, 211);
+}
+
+.container-toggle-buttons {
+  display: flex;
+  justify-content: center;
+  padding: 32px;
+}
+
+.toggle-button {
+  color: rgb(82, 2, 50);
+  font-weight: 100;
+  padding: 4px 8px;
+  border: 1px solid rgb(85, 30, 60);
+  cursor: pointer;
+}
+
+.unit-enabled {
+  background-color: rgb(232, 105, 244);
+  cursor: default;
+}
+
+.right-border-none {
+  border-right: none;
+}
+
+.left-border {
+  border-left: 1px solid dimgray;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-image: url("https://img.goodfon.com/wallpaper/nbig/1/66/taichung-taichung-city-taiwan.jpg");
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
