@@ -35,7 +35,7 @@ body {
   opacity: 0.7;
 
   position: absolute;
-  top: 100px;
+  top: 50px;
   left: 100px;
 }
 
@@ -65,32 +65,20 @@ body {
   color: rgb(228, 165, 211);
 }
 
-.container-toggle-buttons {
-  display: flex;
-  justify-content: center;
+.container-button {
+  
   padding: 32px;
 }
 
-.toggle-button {
+button {
   color: rgb(82, 2, 50);
   font-weight: 100;
   padding: 4px 8px;
-  border: 1px solid rgb(85, 30, 60);
+  
   cursor: pointer;
 }
 
-.unit-enabled {
-  background-color: rgb(232, 105, 244);
-  cursor: default;
-}
 
-.right-border-none {
-  border-right: none;
-}
-
-.left-border {
-  border-left: 1px solid dimgray;
-}
 
 a {
   font-weight: 500;
@@ -131,12 +119,9 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #771163;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -147,6 +132,7 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #dc7ac7;
+    opacity: 0.8
   }
 }

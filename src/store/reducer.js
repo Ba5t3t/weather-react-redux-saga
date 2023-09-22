@@ -1,7 +1,15 @@
 const initialState = {
     weatherData: {},
     city: '',
-    temp: ''
+    temp: '',
+    feelsLike: '',
+    description: '',
+    humidity: '',
+    visibility: '',
+    pressure: '',
+    wind: '',
+    sunrise: '',
+    sunset: ''
 };
 
 const SET_WEATHER = 'SET_WEATHER';
@@ -14,7 +22,15 @@ export const weatherReducer = (state = initialState, action) => {
                 ...state,
                 weatherData: action.payload,
                 city: action.payload.name,
-                temp: action.payload.main.temp
+                temp: action.payload.main.temp,
+                feelsLike: action.payload.main.feels_like,
+                description: action.payload.weather[0].description,
+                humidity: action.payload.main.humidity,
+                visibility: action.payload.visibility,
+                pressure: action.payload.main.pressure,
+                wind: action.payload.wind.speed,
+                sunrise: action.payload.sys.sunrise,
+                sunset: action.payload.sys.sunset
             }
     }
     return state;
