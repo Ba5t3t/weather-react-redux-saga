@@ -9,7 +9,8 @@ const initialState = {
     pressure: '',
     wind: '',
     sunrise: '',
-    sunset: ''
+    sunset: '',
+    timezone: ''
 };
 
 const SET_WEATHER = 'SET_WEATHER';
@@ -30,7 +31,8 @@ export const weatherReducer = (state = initialState, action) => {
                 pressure: action.payload.main.pressure,
                 wind: action.payload.wind.speed,
                 sunrise: action.payload.sys.sunrise,
-                sunset: action.payload.sys.sunset
+                sunset: action.payload.sys.sunset,
+                timezone: action.payload.timezone,
             }
     }
     return state;

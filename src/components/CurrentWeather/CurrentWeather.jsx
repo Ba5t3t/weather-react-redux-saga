@@ -22,7 +22,7 @@ export const CurrentWeather = () => {
         <div>{icon}</div>
         <span>{description}</span>
         <div className='noclass'>
-          <span>ощущается как {feelsLike}</span>
+          <span>ощущается как {Math.round(feelsLike)}</span>
         </div>
 
         <div className='container-button'>

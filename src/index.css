@@ -32,7 +32,8 @@ body {
   justify-content: center;
 
   border: none;
-  opacity: 0.7;
+  color: white;
+  opacity: 0.5;
 
   position: absolute;
   top: 50px;
@@ -53,9 +54,9 @@ body {
 }
 
 .card-title {
-  margin-top: 0;
+  margin: 0;
   padding: 16px;
-  color: rgb(219, 103, 178);
+  color: rgb(250, 206, 235);
   font-size: 40px;
 }
 
@@ -95,6 +96,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #771163;
   background-image: url("https://img.goodfon.com/wallpaper/nbig/1/66/taichung-taichung-city-taiwan.jpg");
   background-position: center; 
   background-repeat: no-repeat; 
