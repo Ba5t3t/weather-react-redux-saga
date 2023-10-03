@@ -1,51 +1,70 @@
 import styled from "styled-components";
 
 export const StyledForecastContainer = styled.div`
-  margin-left: 90px;
-  padding: 20px 25px;
-  min-height: 250px;
-  min-width: 250px;
+  padding: 20px 11px;
+  min-height: 100px;
+  min-width: 950px;
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
   border: none;
   color: white;
+  box-shadow: 0px 0px 4px 0px lightgrey;
 
   position: absolute;
-  top: 50px;
-  left: 500px;
-
-  opacity: 0.7;
+  top: 450px;
+  left: 20px;
 `;
 
 export const StyledForecastCard = styled.div`
   min-width: 250px;
-  border-radius: 16px;
-  box-shadow: 0px 0px 8px 0px grey;
   text-align: center;
+  position: relative;
+  color: #fff
+  
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    z-index: -1;
+    background: url() center / cover no-repeat;
+    filter: blur(5px);
+  }
 `;
 
 export const StyledForecastHeader = styled.div`
-  text-align: center;
-  border-top-left-radius: inherit;
-  border-top-right-radius: inherit;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 30px;
+  text-align: left;
   border-bottom: 2px solid dimgrey;
 `;
 
-export const StyledForecastTitle = styled.h1`
+export const StyledForecastButton = styled.button`
   margin: 0;
-  padding: 20px;
-  color: rgb(250, 206, 235);
-  font-size: 30px;
+  color: white;
+  float: left;
+  border: none;
+  background-color: transparent;
+  width: 210px;
+  font-size: 17px;
+  text-align: center;
+  padding: 15px 0;
+
+  &:hover {
+    box-shadow: 0px 0px 4px 0px lightgrey;
+  }
 `;
 
 export const StyledTableContainer = styled.div`
-  min-height: 230px;
+  min-height: 100px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding-left: 20px;
 `;
 
 export const StyledTable = styled.table`
@@ -65,7 +84,7 @@ export const StyledTableHeaders = styled.th`
 `;
 
 export const StyledTableCell = styled.td`
-  padding: 10px 30px 10px 0;
+  padding: 10px 30px 10px 50px;
   text-align: left;
 `;
 
@@ -79,8 +98,7 @@ export const StyledForecastFooter = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  border-bottom-left-radius: inherit;
-  border-bottom-right-radius: inherit;
-  border-top: 2px solid dimgrey;
+
+  border-bottom: 2px solid dimgrey;
   padding: 20px 30px 10px 0;
 `;

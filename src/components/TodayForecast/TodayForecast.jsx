@@ -4,7 +4,7 @@ import {
   StyledForecastContainer,
   StyledForecastCard,
   StyledForecastHeader,
-  StyledForecastTitle,
+  StyledForecastButton,
   StyledTableContainer,
   StyledTable,
   StyledTableBody,
@@ -20,37 +20,31 @@ import sunsetIcon from "../../icons/sunset.svg";
 export const TodayForecast = () => {
   const weather = useSelector((state) => state.weatherData);
   const humidity = weather?.humidity;
-  const visibility = weather?.visibility;
   const pressure = weather?.pressure;
   const wind = weather?.wind;
 
   const sunrise = new Date(weather?.sunrise * 1000);
   const sunset = new Date(weather?.sunset * 1000);
-  const timezone = weather?.timezone;
 
-  const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
+  // String(now.getHours()).padStart(2, "0");
 
-  const sunriseTime = sunrise.getHours() + ":" + sunrise.getMinutes();
-  const sunsetTime = sunset.getHours() + ":" + sunset.getMinutes();
+  const sunriseTime =
+    String(sunrise.getHours()).padStart(2, "0") +
+    ":" +
+    String(sunrise.getMinutes()).padStart(2, "0");
+
+  const sunsetTime =
+    String(sunset.getHours()).padStart(2, "0") +
+    ":" +
+    String(sunset.getMinutes()).padStart(2, "0");
 
   return (
     <StyledForecastContainer>
       <StyledForecastCard>
         <StyledForecastHeader>
-          <StyledForecastTitle>Прогноз на сегодня</StyledForecastTitle>
+          <StyledForecastButton>Прогноз на день</StyledForecastButton>
+          <StyledForecastButton>Почасовый прогноз</StyledForecastButton>
+          <StyledForecastButton>Ежедневный прогноз</StyledForecastButton>
         </StyledForecastHeader>
 
         <StyledTableContainer>
@@ -59,10 +53,6 @@ export const TodayForecast = () => {
               <tr>
                 <StyledTableCell>влажность</StyledTableCell>
                 <StyledTableHeaders>{humidity}%</StyledTableHeaders>
-              </tr>
-              <tr>
-                <StyledTableCell>видимость</StyledTableCell>
-                <StyledTableHeaders>{visibility / 100} м</StyledTableHeaders>
               </tr>
               <tr>
                 <StyledTableCell>давление</StyledTableCell>
@@ -77,8 +67,16 @@ export const TodayForecast = () => {
             </tbody>
           </StyledTable>
         </StyledTableContainer>
+      </StyledForecastCard>
 
-        <StyledForecastFooter>
+      <div>Today's</div>
+    </StyledForecastContainer>
+  );
+};
+
+// humidity, visibility, pressure, wind speed, sunrise, sunset
+{
+  /* <StyledForecastFooter>
           <StyledTable>
             <StyledTableBody>
               <tr>
@@ -95,10 +93,5 @@ export const TodayForecast = () => {
               </tr>
             </StyledTableBody>
           </StyledTable>
-        </StyledForecastFooter>
-      </StyledForecastCard>
-    </StyledForecastContainer>
-  );
-};
-
-// humidity, visibility, pressure, wind speed, sunrise, sunset
+        </StyledForecastFooter> */
+}
