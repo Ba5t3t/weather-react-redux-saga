@@ -6,6 +6,7 @@ import Celcius from "../../icons/celcius.svg";
 import Fahrenheit from "../../icons/fahrenheit.svg";
 import TempIcon from "../../icons/cloudy.svg";
 import LocationIcon from "../../icons/location.svg";
+import { Search } from "../Search/Search";
 
 export const CurrentWeather = () => {
   const weather = useSelector((state) => state.weatherData);
@@ -37,8 +38,7 @@ export const CurrentWeather = () => {
         </div>
 
         <div className='location'>
-          <img src={LocationIcon} alt='' height={30} />
-          <p>Выбрать другой город</p>
+          <Search></Search>
         </div>
 
         {/* 
