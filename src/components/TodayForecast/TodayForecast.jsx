@@ -16,6 +16,7 @@ import {
 
 import sunriseIcon from "../../icons/sunrise.svg";
 import sunsetIcon from "../../icons/sunset.svg";
+import { TodaysTemp } from "../TodaysTemp/TodaysTemp";
 
 export const TodayForecast = () => {
   const weather = useSelector((state) => state.weatherData);
@@ -69,7 +70,7 @@ export const TodayForecast = () => {
         </StyledTableContainer>
       </StyledForecastCard>
 
-      <div>Today's</div>
+      <TodaysTemp></TodaysTemp>
     </StyledForecastContainer>
   );
 };
