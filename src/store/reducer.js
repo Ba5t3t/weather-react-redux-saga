@@ -13,7 +13,9 @@ const initialState = {
     wind: '',
     sunrise: '',
     sunset: '',
-    timezone: ''
+    tempMax: '',
+    tempMin: '',
+
 };
 
 const SET_WEATHER = 'SET_WEATHER';
@@ -34,7 +36,8 @@ export const weatherReducer = (state = initialState, action) => {
                 wind: action.payload.wind.speed,
                 sunrise: action.payload.sys.sunrise,
                 sunset: action.payload.sys.sunset,
-                timezone: action.payload.timezone,
+                tempMax: action.payload.main.temp_max,
+                tempMin: action.payload.main.temp_min,
             }
     }
     return state;
