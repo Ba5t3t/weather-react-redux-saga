@@ -28,10 +28,38 @@ export const TemperatureCardsContainer = styled.div`
   gap: 20px;
 `;
 
-export const TemperatureCard = styled.div`
-  height: 70px;
+export const SunCard = styled.div`
+  height: 100px;
   width: 85px;
   box-shadow: 0px 0px 4px 0px lightgrey;
   text-align: center;
-  padding: 30px 10px;
+  padding: 20px 10px 10px 10px;
+  font-size: 14px;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const TemperatureCard = styled.div`
+  height: 100px;
+  width: 85px;
+  box-shadow: 0px 0px 4px 0px lightgrey;
+  text-align: center;
+  padding: 20px 10px 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+/* export const Thermometer = styled.div`
+
+` */
+
+export const Temperature = styled.div`
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20px;
 `;
