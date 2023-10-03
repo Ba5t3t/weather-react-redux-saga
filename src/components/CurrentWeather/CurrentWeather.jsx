@@ -23,7 +23,7 @@ export const CurrentWeather = () => {
         <div className='current-weather-temperature'>
           <div className='temperature'>
             {Math.round(temperature)}
-            {"°"}
+            {"°С"}
           </div>
 
           <div className='description'>

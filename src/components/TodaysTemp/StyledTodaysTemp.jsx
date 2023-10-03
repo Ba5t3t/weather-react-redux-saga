@@ -30,7 +30,7 @@ export const TemperatureCardsContainer = styled.div`
 
 export const SunCard = styled.div`
   height: 100px;
-  width: 85px;
+  width: 90px;
   box-shadow: 0px 0px 4px 0px lightgrey;
   text-align: center;
   padding: 20px 10px 10px 10px;
@@ -43,7 +43,7 @@ export const SunCard = styled.div`
 
 export const TemperatureCard = styled.div`
   height: 100px;
-  width: 85px;
+  width: 90px;
   box-shadow: 0px 0px 4px 0px lightgrey;
   text-align: center;
   padding: 20px 10px 10px 10px;
@@ -62,4 +62,5 @@ export const Temperature = styled.div`
   flex-direction: column;
   align-items: center;
   font-size: 20px;
+  padding-right: 10px;
 `;

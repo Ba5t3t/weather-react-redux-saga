@@ -50,11 +50,11 @@ export const TodaysTemp = () => {
           <Temperature>
             <div>
               {Math.round(tempMax)}
-              {"°"}
+              {"°C"}
             </div>
             <div>
               {Math.round(tempMin)}
-              {"°"}
+              {"°C"}
             </div>
           </Temperature>
         </TemperatureCard>

@@ -1,4 +1,5 @@
 import React from "react";
+import { DateContainer, DateText } from "./StyledWeekday";
 
 export const Weekday = () => {
   const weekday = new Date().toLocaleDateString("ru-RU", { weekday: "long" });
@@ -15,12 +16,12 @@ export const Weekday = () => {
   //console.log(date);
 
   return (
-    <div>
-      <h3>
+    <DateContainer>
+      <DateText>
         {weekday}
         {", "}
         {currentDate}
-      </h3>
-    </div>
+      </DateText>
+    </DateContainer>
   );
 };
