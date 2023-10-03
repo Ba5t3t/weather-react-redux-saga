@@ -2,6 +2,8 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 
+import { TimeContainer, TimeText } from "./StyledTime";
+
 export const Time = () => {
   const [time, setTime] = useState("");
 
@@ -20,8 +22,8 @@ export const Time = () => {
   }, []);
 
   return (
-    <div>
-      <h2>{time}</h2>
-    </div>
+    <TimeContainer>
+      <TimeText>{time}</TimeText>
+    </TimeContainer>
   );
 };

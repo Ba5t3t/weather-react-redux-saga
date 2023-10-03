@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { SwitchTemp } from "../../components/SwitchTemp/SwitchTemp";
-import { Weekday } from "../Weekday/Weekday";
-import { Time } from "../Time/Time";
 
 import Celcius from "../../icons/celcius.svg";
 import Fahrenheit from "../../icons/fahrenheit.svg";
@@ -40,11 +38,10 @@ export const CurrentWeather = () => {
 
         <div className='location'>
           <img src={LocationIcon} alt='' height={30} />
-          <p>Другой город</p>
+          <p>Выбрать другой город</p>
         </div>
 
-        {/* <Weekday></Weekday>
-        <Time></Time>
+        {/* 
 
         <div>{icon}</div>
 

@@ -49,11 +49,11 @@ export const TodaysTemp = () => {
           {<img src={Thermometer} height='50' />}
           <Temperature>
             <div>
-              {Math.round(tempMin)}
+              {Math.round(tempMax)}
               {"°"}
             </div>
             <div>
-              {Math.round(tempMax)}
+              {Math.round(tempMin)}
               {"°"}
             </div>
           </Temperature>
