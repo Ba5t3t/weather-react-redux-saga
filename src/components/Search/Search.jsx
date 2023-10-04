@@ -10,15 +10,12 @@ import {
 } from "./StyledSearch";
 
 import { FETCH_CITY, fetchCity } from "../../store/cityReducer";
-import { useMemo } from "react";
-import { SelectCity } from "../SelectCity/SelectCity";
 
 export const Search = () => {
   const dispatch = useDispatch();
   const [toggle, setToggle] = useState(false);
 
   const cities = useSelector((state) => state?.citiesData);
-  console.log(cities);
 
   const [inputValue, setInputValue] = useState("");
 
@@ -53,6 +50,14 @@ export const Search = () => {
           onChange={(e) => handleSearch(e.target.value)}
           onKeyDown={handleInputEntering}
         />
+
+        <div>
+          <ul>
+            {cities.map((item) => (
+              <li>{item.name}</li>
+            ))}
+          </ul>
+        </div>
       </>
     );
   } else {
