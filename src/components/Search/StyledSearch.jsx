@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const LocationInput = styled.input`
-  height: 20px;
-  width: 170px;
+  height: 30px;
+  width: 180px;
   margin: 16px 0;
   border: none;
   padding: 5px;

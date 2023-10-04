@@ -9,20 +9,43 @@ import {
 
 export const Search = () => {
   const [toggle, setToggle] = useState(false);
-  const handleClick = () => {
+  const [city, setCity] = useState([]);
+
+  const handleIconClick = () => {
     setToggle(!toggle);
+  };
+
+  const handleInputEntering = (e) => {
+    if (e.key === "Enter") {
+      handleClick();
+    }
+  };
+
+  const handleSearch = (e) => {
+    const value = e.target.value;
+    setCity((city) => {
+      return city.filter((item) =>
+        item.toLowerCase().includes(value.toLowerCase())
+      );
+    });
   };
 
   if (toggle) {
     return (
       <>
         <StyledLocationIcon
-          onClick={handleClick}
+          onClick={handleIconClick}
           src={LocationIcon}
           alt=''
           height={30}
         />
-        <LocationInput type='text' />
+        <LocationInput
+          type='search'
+          placeholder='Введите город'
+          value={city}
+          onChange={handleSearch}
+          onKeyDown={handleInputEntering}
+        />
       </>
     );
   } else {
