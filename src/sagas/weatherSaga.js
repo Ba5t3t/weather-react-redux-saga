@@ -8,7 +8,7 @@ function* weatherWorker(props = {}) {
     const { payload: unit } = props;
     const data = yield call(fetchWeatherFromAPI, [unit])
     yield put(setWeather(data.data))
-    console.log(data.data)
+    //console.log(data)
 
 }
 

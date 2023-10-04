@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
 import LocationIcon from "../../icons/location.svg";
 import {
   LocationInput,
@@ -7,9 +9,18 @@ import {
   StyledLocationIcon,
 } from "./StyledSearch";
 
+import { FETCH_CITY, fetchCity } from "../../store/cityReducer";
+import { useMemo } from "react";
+import { SelectCity } from "../SelectCity/SelectCity";
+
 export const Search = () => {
+  const dispatch = useDispatch();
   const [toggle, setToggle] = useState(false);
-  const [city, setCity] = useState([]);
+
+  const cities = useSelector((state) => state?.citiesData);
+  console.log(cities);
+
+  const [inputValue, setInputValue] = useState("");
 
   const handleIconClick = () => {
     setToggle(!toggle);
@@ -17,17 +28,13 @@ export const Search = () => {
 
   const handleInputEntering = (e) => {
     if (e.key === "Enter") {
-      handleClick();
+      handleIconClick();
     }
   };
 
-  const handleSearch = (e) => {
-    const value = e.target.value;
-    setCity((city) => {
-      return city.filter((item) =>
-        item.toLowerCase().includes(value.toLowerCase())
-      );
-    });
+  const handleSearch = (value) => {
+    setInputValue(value);
+    dispatch(fetchCity(value));
   };
 
   if (toggle) {
@@ -42,8 +49,8 @@ export const Search = () => {
         <LocationInput
           type='search'
           placeholder='Введите город'
-          value={city}
-          onChange={handleSearch}
+          value={inputValue}
+          onChange={(e) => handleSearch(e.target.value)}
           onKeyDown={handleInputEntering}
         />
       </>
@@ -52,7 +59,7 @@ export const Search = () => {
     return (
       <>
         <StyledLocationIcon
-          onClick={handleClick}
+          onClick={handleIconClick}
           src={LocationIcon}
           alt=''
           height={30}
