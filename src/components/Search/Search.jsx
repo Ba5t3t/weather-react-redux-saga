@@ -7,9 +7,12 @@ import {
   LocationInput,
   LocationText,
   StyledLocationIcon,
+  List,
+  Select,
 } from "./StyledSearch";
 
 import { FETCH_CITY, fetchCity } from "../../store/cityReducer";
+import { fetchWeather } from "../../store/reducer";
 
 export const Search = () => {
   const dispatch = useDispatch();
@@ -34,6 +37,12 @@ export const Search = () => {
     dispatch(fetchCity(value));
   };
 
+  const choseCity = (value) => {
+    setInputValue(value);
+    // dispatch(fetchWeather(value));
+    // setToggle(false);
+  };
+
   if (toggle) {
     return (
       <>
@@ -51,13 +60,13 @@ export const Search = () => {
           onKeyDown={handleInputEntering}
         />
 
-        <div>
-          <ul>
-            {cities.map((item) => (
-              <li>{item.name}</li>
+        <Select>
+          <List>
+            {cities.map((city) => (
+              <li key={city.id}>{city.name}</li>
             ))}
-          </ul>
-        </div>
+          </List>
+        </Select>
       </>
     );
   } else {
