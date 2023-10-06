@@ -7,10 +7,7 @@ const fetchCityFromAPI = (city = 'Moscow') => axios.get(`https://autocomplete.tr
 function* cityWorker(props = []) {
     const { payload: city } = props;
     const data = yield call(fetchCityFromAPI, [city || 'Moscow'])
-    console.log(city);
     yield put(setCity(data))
-    console.log(data.data)
-
 }
 
 export function* cityWatcher() {

@@ -11,15 +11,13 @@ import {
   Select,
 } from "./StyledSearch";
 
-import { FETCH_CITY, fetchCity } from "../../store/cityReducer";
+import { fetchCity } from "../../store/cityReducer";
 import { fetchWeather } from "../../store/reducer";
 
 export const Search = () => {
   const dispatch = useDispatch();
-  const [toggle, setToggle] = useState(false);
-
   const cities = useSelector((state) => state?.citiesData);
-
+  const [toggle, setToggle] = useState(false);
   const [inputValue, setInputValue] = useState("");
 
   const handleIconClick = () => {
@@ -35,12 +33,13 @@ export const Search = () => {
   const handleSearch = (value) => {
     setInputValue(value);
     dispatch(fetchCity(value));
+    console.log(value);
   };
 
-  const choseCity = (value) => {
-    setInputValue(value);
-    // dispatch(fetchWeather(value));
-    // setToggle(false);
+  const chooseCity = (city) => () => {
+    setInputValue(city);
+    dispatch(fetchWeather(city));
+    setToggle(false);
   };
 
   if (toggle) {
@@ -63,7 +62,9 @@ export const Search = () => {
         <Select>
           <List>
             {cities.map((city) => (
-              <li key={city.id}>{city.name}</li>
+              <li onClick={chooseCity(city.name)} key={city.id}>
+                {city.name}
+              </li>
             ))}
           </List>
         </Select>

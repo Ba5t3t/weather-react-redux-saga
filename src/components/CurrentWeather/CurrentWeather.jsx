@@ -18,6 +18,8 @@ export const CurrentWeather = () => {
 
   const [isToggled, setIsToggled] = useState(false);
 
+  const wind = weather?.wind;
+
   return (
     <div className='current-weather-container'>
       <div className='card'>
@@ -42,8 +44,6 @@ export const CurrentWeather = () => {
         </div>
 
         {/* 
-
-        <div>{icon}</div>
 
         <div className='noclass'>
           <span>ощущается как {Math.round(feelsLike)}</span>

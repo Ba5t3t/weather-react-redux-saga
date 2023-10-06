@@ -35,7 +35,7 @@ export const Select = styled.div`
 `;
 
 export const List = styled.ul`
-  max-height: 200px;
+  max-height: 152px;
   width: 170px;
   margin: 0;
   border: none;

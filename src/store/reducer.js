@@ -1,7 +1,3 @@
-import axios from 'axios'
-import { createSlice } from "@reduxjs/toolkit";
-
-
 const initialState = {
     weatherData: {},
     city: '',
@@ -44,6 +40,12 @@ export const weatherReducer = (state = initialState, action) => {
 }
 
 export const setWeather = (payload) => ({ type: SET_WEATHER, payload })
-export const fetchWeather = () => ({ type: FETCH_WEATHER, payload: 'metric' })
+export const fetchWeather = (city) => ({
+    type: FETCH_WEATHER,
+    payload: {
+        unit: 'metric',
+        city: city,
+    }
+})
 
 
