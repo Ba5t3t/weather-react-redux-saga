@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { SwitchTemp } from "../../components/SwitchTemp/SwitchTemp";
 
@@ -17,8 +17,6 @@ export const CurrentWeather = () => {
   const icon = weather?.icon;
 
   const [isToggled, setIsToggled] = useState(false);
-
-  const wind = weather?.wind;
 
   return (
     <div className='current-weather-container'>

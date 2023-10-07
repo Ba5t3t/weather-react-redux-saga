@@ -33,13 +33,13 @@ export const Search = () => {
   const handleSearch = (value) => {
     setInputValue(value);
     dispatch(fetchCity(value));
-    console.log(value);
   };
 
   const chooseCity = (city) => () => {
     setInputValue(city);
     dispatch(fetchWeather(city));
     setToggle(false);
+    setInputValue("");
   };
 
   if (toggle) {

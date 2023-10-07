@@ -39,7 +39,7 @@ export const List = styled.ul`
   width: 170px;
   margin: 0;
   border: none;
-  padding: 5px;
+  padding: 0 5px;
   font-size: 17px;
   outline: none;
 

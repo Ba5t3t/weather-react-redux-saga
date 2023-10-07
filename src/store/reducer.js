@@ -1,5 +1,7 @@
 const initialState = {
-    weatherData: {},
+    weatherData: localStorage.getItem("weather")
+        ? JSON.parse(localStorage.getItem("weather"))
+        : {},
     city: '',
     temp: '',
     feelsLike: '',
@@ -13,6 +15,7 @@ const initialState = {
     tempMin: '',
 
 };
+
 
 const SET_WEATHER = 'SET_WEATHER';
 export const FETCH_WEATHER = 'FETCH_WEATHER';
