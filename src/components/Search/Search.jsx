@@ -12,6 +12,8 @@ import { LocationInput } from "../LocationInput/LocationInput";
 export const Search = () => {
   const dispatch = useDispatch();
   const cities = useSelector((state) => state?.citiesData);
+  const weather = useSelector((state) => state.weatherData);
+  console.log(weather);
   const [toggle, setToggle] = useState(false);
   const [inputValue, setInputValue] = useState("");
 
@@ -29,6 +31,7 @@ export const Search = () => {
     dispatch(fetchWeather(city));
     setToggle(false);
     setInputValue("");
+
     localStorage.setItem("city", JSON.stringify(city));
   };
 

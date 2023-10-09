@@ -8,6 +8,7 @@ function* weatherWorker(props = {}) {
     const { payload: { unit, city } } = props;
     const data = yield call(fetchWeatherFromAPI, unit, city)
     yield put(setWeather(data.data))
+    console.log(data.data);
 }
 
 export function* weatherWatcher() {

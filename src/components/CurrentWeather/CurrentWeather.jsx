@@ -15,6 +15,7 @@ export const CurrentWeather = () => {
   const feelsLike = weather?.feelsLike;
   const description = weather?.description;
   const icon = weather?.icon;
+  console.log(icon);
 
   const [isToggled, setIsToggled] = useState(false);
 
@@ -28,7 +29,12 @@ export const CurrentWeather = () => {
           </div>
 
           <div className='description'>
-            <img src={TempIcon} alt='' height={30} />
+            <img
+              src={`https://openweathermap.org/img/w/${icon}.png`}
+              alt={description}
+              height={60}
+              width={60}
+            />
             <span>{description}</span>
           </div>
         </div>
