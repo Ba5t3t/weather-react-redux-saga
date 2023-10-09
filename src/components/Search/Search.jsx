@@ -3,16 +3,11 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import LocationIcon from "../../icons/location.svg";
-import {
-  LocationInput,
-  LocationText,
-  StyledLocationIcon,
-  List,
-  Select,
-} from "./StyledSearch";
+import { LocationText, StyledLocationIcon, List, Select } from "./StyledSearch";
 
 import { fetchCity } from "../../store/cityReducer";
 import { fetchWeather } from "../../store/reducer";
+import { LocationInput } from "../LocationInput/LocationInput";
 
 export const Search = () => {
   const dispatch = useDispatch();
@@ -20,7 +15,7 @@ export const Search = () => {
   const [toggle, setToggle] = useState(false);
   const [inputValue, setInputValue] = useState("");
 
-  const handleIconClick = () => {
+  const handleToggle = () => {
     setToggle(!toggle);
   };
 
@@ -30,33 +25,27 @@ export const Search = () => {
     }
   };
 
-  const handleSearch = (value) => {
-    setInputValue(value);
-    dispatch(fetchCity(value));
-  };
-
   const chooseCity = (city) => () => {
-    setInputValue(city);
     dispatch(fetchWeather(city));
     setToggle(false);
     setInputValue("");
+    localStorage.setItem("city", JSON.stringify(city));
   };
 
   if (toggle) {
     return (
       <>
         <StyledLocationIcon
-          onClick={handleIconClick}
+          onClick={handleToggle}
           src={LocationIcon}
           alt=''
           height={30}
         />
+
         <LocationInput
-          type='search'
-          placeholder='Введите город'
-          value={inputValue}
-          onChange={(e) => handleSearch(e.target.value)}
-          onKeyDown={handleInputEntering}
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          handleInputEntering={handleInputEntering}
         />
 
         <Select>
@@ -74,7 +63,7 @@ export const Search = () => {
     return (
       <>
         <StyledLocationIcon
-          onClick={handleIconClick}
+          onClick={handleToggle}
           src={LocationIcon}
           alt=''
           height={30}
@@ -84,3 +73,7 @@ export const Search = () => {
     );
   }
 };
+
+/*   useEffect(() => {
+    localStorage.setItem("city", JSON.stringify(city));
+  }, [city]); */

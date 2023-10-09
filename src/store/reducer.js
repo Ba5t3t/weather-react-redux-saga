@@ -1,7 +1,5 @@
 const initialState = {
-    weatherData: localStorage.getItem("weather")
-        ? JSON.parse(localStorage.getItem("weather"))
-        : {},
+    weatherData: {},
     city: '',
     temp: '',
     feelsLike: '',

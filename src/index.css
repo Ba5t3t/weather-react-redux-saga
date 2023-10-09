@@ -91,9 +91,11 @@ body {
   justify-content: left;
   gap: 10px;
   align-items: center;
-  padding: 20px;
+  padding: 0;
   padding-left: 55px;
   text-align: left;
+  height: 82px;
+  width: 286px;
 }
 
 

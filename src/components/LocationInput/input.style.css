@@ -1,0 +1,11 @@
+.class {
+    border: none;
+}
+
+.candy {
+    cursor: pointer;
+}
+
+.book {
+    font-size: 20px;
+}
