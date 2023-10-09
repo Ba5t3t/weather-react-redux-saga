@@ -57,9 +57,13 @@ export const StyledForecastButton = styled.button`
   &:hover {
     box-shadow: 0px 0px 4px 0px lightgrey;
   }
+
+  &:active {
+    background-color: ${(props) => (props.$activeTab ? "#7970ca" : "")};
+  }
 `;
 
-export const StyledTableContainer = styled.div`
+export const ForecastContainer = styled.div`
   min-height: 100px;
   display: flex;
   justify-content: space-between;

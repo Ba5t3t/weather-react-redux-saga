@@ -62,24 +62,3 @@ export const TodaysTemp = () => {
     </TodaysTempContainer>
   );
 };
-
-{
-  /* <StyledForecastFooter>
-            <StyledTable>
-              <StyledTableBody>
-                <tr>
-                  <StyledTableCellIcon>
-                    {<img src={sunriseIcon} width='70' height='30' />}
-                  </StyledTableCellIcon>
-                  <StyledTableCellIcon>
-                    {<img src={sunsetIcon} width='35' height='30' />}
-                  </StyledTableCellIcon>
-                </tr>
-                <tr>
-                  <StyledTableCellIcon>{sunriseTime}</StyledTableCellIcon>
-                  <StyledTableCellIcon>{sunsetTime}</StyledTableCellIcon>
-                </tr>
-              </StyledTableBody>
-            </StyledTable>
-          </StyledForecastFooter> */
-}

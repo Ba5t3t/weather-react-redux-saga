@@ -12,10 +12,8 @@ export const CurrentWeather = () => {
   const weather = useSelector((state) => state.weatherData);
   const temperature = weather?.temp;
   const city = weather?.city;
-  const feelsLike = weather?.feelsLike;
   const description = weather?.description;
   const icon = weather?.icon;
-  console.log(icon);
 
   const [isToggled, setIsToggled] = useState(false);
 

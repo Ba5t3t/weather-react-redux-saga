@@ -12,6 +12,9 @@ const initialState = {
     tempMax: '',
     tempMin: '',
     icon: '',
+    lat: '',
+    lon: '',
+    visibility: '',
 };
 
 
@@ -35,7 +38,10 @@ export const weatherReducer = (state = initialState, action) => {
                 sunset: action.payload.sys.sunset,
                 tempMax: action.payload.main.temp_max,
                 tempMin: action.payload.main.temp_min,
-                icon: action.payload.weather[0].icon
+                icon: action.payload.weather[0].icon,
+                lat: action.payload.coord.lat,
+                lon: action.payload.coord.lon,
+                visibility: action.payload.visibility,
             }
     }
     return state;

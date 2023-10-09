@@ -22,9 +22,9 @@ function App() {
 
   return (
     <div className='app'>
-      <CurrentWeather></CurrentWeather>
-      <TodayForecast></TodayForecast>
-      <DateTime></DateTime>
+      <CurrentWeather />
+      <TodayForecast />
+      <DateTime />
     </div>
   );
 }
