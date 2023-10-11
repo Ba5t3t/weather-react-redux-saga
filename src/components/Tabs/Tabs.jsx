@@ -10,7 +10,7 @@ import { TabContent } from "../TabContent/TabContent";
 import { WeeklyTab } from "../AllTabs/WeeklyTab";
 
 export const Tabs = () => {
-  const [activeTab, setActiveTab] = useState("");
+  const [activeTab, setActiveTab] = useState("daily");
 
   return (
     <>

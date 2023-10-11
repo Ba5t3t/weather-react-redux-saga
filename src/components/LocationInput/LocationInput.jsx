@@ -21,14 +21,13 @@ export const LocationInput = ({
     }
     setError(false);
     setInputValue(value);
-    console.log(value);
     dispatch(fetchCity(value));
   };
 
   return (
     <StyledDiv $error={error}>
       <StyledLocationInput
-        type='search'
+        type='text'
         placeholder='Введите город'
         value={inputValue}
         onChange={(e) => handleSearch(e.target.value)}

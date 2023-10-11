@@ -1,19 +1,16 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import LocationIcon from "../../icons/location.svg";
 import { LocationText, StyledLocationIcon, List, Select } from "./StyledSearch";
 
-import { fetchCity } from "../../store/cityReducer";
 import { fetchWeather } from "../../store/reducer";
 import { LocationInput } from "../LocationInput/LocationInput";
 
 export const Search = () => {
   const dispatch = useDispatch();
   const cities = useSelector((state) => state?.citiesData);
-  const weather = useSelector((state) => state.weatherData);
-  console.log(weather);
   const [toggle, setToggle] = useState(false);
   const [inputValue, setInputValue] = useState("");
 
@@ -31,7 +28,6 @@ export const Search = () => {
     dispatch(fetchWeather(city));
     setToggle(false);
     setInputValue("");
-
     localStorage.setItem("city", JSON.stringify(city));
   };
 
@@ -76,7 +72,3 @@ export const Search = () => {
     );
   }
 };
-
-/*   useEffect(() => {
-    localStorage.setItem("city", JSON.stringify(city));
-  }, [city]); */
