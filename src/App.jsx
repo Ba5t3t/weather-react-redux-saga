@@ -5,6 +5,7 @@ import { fetchWeather } from "./store/reducer";
 import { CurrentWeather } from "./components/CurrentWeather/currentWeather";
 import { TodayForecast } from "./components/TodayForecast/TodayForecast";
 import { DateTime } from "./components/DateTime/DateTime";
+import { Modal } from "./components/Modal/modal";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <div className='app'>
+      <Modal />
       <CurrentWeather />
       <TodayForecast />
       <DateTime />
