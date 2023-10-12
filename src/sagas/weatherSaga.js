@@ -6,14 +6,18 @@ const fetchWeatherFromAPI = (unit = 'metric', city = 'Moscow') => axios.get(`htt
 
 function* weatherWorker(props = {}) {
     const { payload: { unit, city } } = props;
-    const data = yield call(fetchWeatherFromAPI, unit, city)
-    console.log(city);
-    console.log(Object.keys(data.data).length);
 
-    if (Object.keys(data.data).length !== null) {
+    try {
+        const data = yield call(fetchWeatherFromAPI, unit, city)
         yield put(setWeather(data.data))
-        console.log(data.data);
-    } else { return }
+    } catch (error) {
+        alert('Город не найден в базе')
+        alert(error.name); // ReferenceError
+        alert(error.message);
+        const data = yield call(fetchWeatherFromAPI)
+        localStorage.setItem("city", JSON.stringify(city));
+        yield put(setWeather(data.data))
+    }
 }
 
 export function* weatherWatcher() {
