@@ -5,7 +5,7 @@ import { fetchWeather } from "./store/reducer";
 import { CurrentWeather } from "./components/CurrentWeather/currentWeather";
 import { TodayForecast } from "./components/TodayForecast/TodayForecast";
 import { DateTime } from "./components/DateTime/DateTime";
-import { ErrorModalProvider } from "./components/Modal/ErrorModalProvider";
+import { ErrorModalProvider } from "./components/ErrorModalProvider/ErrorModalProvider";
 
 function App() {
   const dispatch = useDispatch();
