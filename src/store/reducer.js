@@ -15,6 +15,7 @@ const initialState = {
     lat: '',
     lon: '',
     visibility: '',
+    timezone: '',
 };
 
 
@@ -42,17 +43,20 @@ export const weatherReducer = (state = initialState, action) => {
                 lat: action.payload.coord.lat,
                 lon: action.payload.coord.lon,
                 visibility: action.payload.visibility,
+                timezone: action.payload.timezone,
             }
     }
     return state;
 }
 
 export const setWeather = (payload) => ({ type: SET_WEATHER, payload })
-export const fetchWeather = (city) => ({
+export const fetchWeather = (city, toggleErrorModal, setErrorModal) => ({
     type: FETCH_WEATHER,
     payload: {
         unit: 'metric',
         city: city,
+        toggleErrorModal,
+        setErrorModal
     }
 })
 

@@ -12,19 +12,24 @@
   }
   
   .modal {
-    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    background-color: #4239954f;
     border: 1px solid #bebebe;
     border-radius: 2px;
     padding: 12px 16px;
-    color: black;
+    color: white;
   }
 
   .modal-close {
-    position: absolute;
-    right: 510px;
-    top: 435px;
+    
     font-size: 24px;
     cursor: pointer;
-    color: black;
-    background-color: grey;
+    color: white;
+  }
+
+  .modal-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }

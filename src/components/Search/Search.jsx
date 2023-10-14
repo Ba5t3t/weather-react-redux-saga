@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useErrorModal } from "../ErrorModalProvider/ErrorModalProvider";
 
 import LocationIcon from "../../icons/location.svg";
 import { LocationText, StyledLocationIcon, List, Select } from "./StyledSearch";
@@ -13,6 +14,7 @@ export const Search = () => {
   const cities = useSelector((state) => state?.citiesData);
   const [toggle, setToggle] = useState(false);
   const [inputValue, setInputValue] = useState("");
+  const {toggleErrorModal, setErrorModal} = useErrorModal();
 
   const handleToggle = () => {
     setToggle(!toggle);
@@ -25,7 +27,7 @@ export const Search = () => {
   };
 
   const chooseCity = (city) => () => {
-    dispatch(fetchWeather(city));
+    dispatch(fetchWeather(city, toggleErrorModal, setErrorModal));
     setToggle(false);
     setInputValue("");
     localStorage.setItem("city", JSON.stringify(city));

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledForecastContainer = styled.div`
-  padding: 20px 11px;
+  padding: 20px 20px;
   min-height: 100px;
   min-width: 950px;
 
@@ -38,9 +38,8 @@ export const StyledForecastCard = styled.div`
 export const StyledForecastHeader = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-left: 30px;
   text-align: left;
-  border-bottom: 2px solid dimgrey;
+  border-bottom: 2px solid #4239954f;
 `;
 
 export const StyledForecastButton = styled.button`
@@ -48,7 +47,7 @@ export const StyledForecastButton = styled.button`
   color: white;
   float: left;
   border: none;
-  background-color: transparent;
+  background-color: ${(props) => (props.$activeTab ? "#4239954f" : 'transparent')};
   width: 210px;
   font-size: 17px;
   text-align: center;
@@ -58,9 +57,6 @@ export const StyledForecastButton = styled.button`
     box-shadow: 0px 0px 4px 0px lightgrey;
   }
 
-  &:active {
-    background-color: ${(props) => (props.$activeTab ? "#7970ca" : "")};
-  }
 `;
 
 export const ForecastContainer = styled.div`
@@ -68,7 +64,7 @@ export const ForecastContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 20px;
+  background-color: #4239954f
 `;
 
 export const StyledTable = styled.table`
