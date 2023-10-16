@@ -18,7 +18,6 @@ export const Time = () => {
   useEffect(() => {
     const myInterval = setInterval(() => {
       let hours = parseInt(moment().utc().format("HH")) + hoursTimezone;
-      console.log(hours);
       let minutes = parseInt(moment().utc().format("mm")) + minutesTimezone;
       let seconds = parseInt(moment().utc().format("ss")) + secondsTimezone;
 
@@ -38,7 +37,7 @@ export const Time = () => {
     return () => {
       clearInterval(myInterval);
     };
-  }, []);
+  }, [hoursTimezone, minutesTimezone, secondsTimezone]);
 
   return (
     <TimeContainer>
