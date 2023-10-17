@@ -21,6 +21,16 @@ export const Time = () => {
       let minutes = parseInt(moment().utc().format("mm")) + minutesTimezone;
       let seconds = parseInt(moment().utc().format("ss")) + secondsTimezone;
 
+      if (hours >= 24) {
+        hours = hours - 24;
+      }
+      if (minutes >= 60) {
+        minutes = minutes - 60;
+      }
+      if (seconds >= 60) {
+        seconds = seconds - 60;
+      }
+
       if (hours < 10) {
         hours = "0" + hours;
       }
@@ -31,7 +41,7 @@ export const Time = () => {
         seconds = "0" + seconds;
       }
 
-      setTime(hours + ":" + minutes + ":" + seconds);
+      setTime(hours + ":" + minutes);
     }, 1000);
 
     return () => {
