@@ -11,38 +11,37 @@ import { WeeklyTab } from "../AllTabs/WeeklyTab";
 
 export const Tabs = () => {
   const [activeTab, setActiveTab] = useState("daily");
+
   const tabNavItems = [
     {
-      title: 'Прогноз на день',
-      id: 'daily'
+      title: "Прогноз на день",
+      id: "daily",
     },
     {
-      title: 'Дополнительная информация',
-      id: 'hourly'
+      title: "Дополнительная информация",
+      id: "hourly",
     },
     {
-      title: 'Геолокация',
-      id: 'weekly'
+      title: "Геолокация",
+      id: "weekly",
     },
-]
+  ];
 
   return (
     <>
       <StyledForecastCard>
         <StyledForecastHeader>
-          {tabNavItems.map(item => {
-            return <TabNavItem
-            key={item.id}
-            title={item.title}
-            id={item.id}
-            activeTab={item.id === activeTab}
-            setActiveTab={setActiveTab}
-            />
-          })
-
-          }
-          
-          
+          {tabNavItems.map((item) => {
+            return (
+              <TabNavItem
+                key={item.id}
+                title={item.title}
+                id={item.id}
+                activeTab={item.id === activeTab}
+                setActiveTab={setActiveTab}
+              />
+            );
+          })}
         </StyledForecastHeader>
 
         <div className='outlet'>

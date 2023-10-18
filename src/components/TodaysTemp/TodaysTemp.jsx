@@ -51,9 +51,15 @@ export const TodaysTemp = () => {
     localTimezoneMinutes +
     minutesTimezone;
 
+  /* console.log(
+    new Date(weather?.sunset * 1000).getHours(),
+    localTimezoneHours / 60,
+    hoursTimezone
+  ); */
+
   /* const sunrise = new Date(weather?.sunrise * 1000);
   const sunriseHours = String(sunrise.getHours()).padStart(2, "0");
-  const sunriseMinutes = String(sunrise.getMinutes()).padStart(2, "0"); */
+  const sunriseMinutes = String(new Date(weather?.sunrise * 1000).getMinutes()).padStart(2, "0"); */
 
   if (sunriseHours < 10) {
     sunriseHours = "0" + sunriseHours;
@@ -69,11 +75,9 @@ export const TodaysTemp = () => {
     sunsetMinutes = "0" + sunsetMinutes;
   }
 
-  console.log();
-
-  /*  const sunset = new Date(weather?.sunset * 1000);
+  /*  const sunset = new Date(1697489312 * 1000);
   const sunsetTime =
-    String(sunset.getHours()).padStart(2, "0") +
+    String(new Date(1697489312 * 1000).getHours()).padStart(2, "0") +
     ":" +
     String(sunset.getMinutes()).padStart(2, "0"); */
 
@@ -103,11 +107,11 @@ export const TodaysTemp = () => {
           <Temperature>
             <div>
               {Math.round(tempMax)}
-              {"°C"}
+              {"°"}
             </div>
             <div>
               {Math.round(tempMin)}
-              {"°C"}
+              {"°"}
             </div>
           </Temperature>
         </TemperatureCard>

@@ -19,7 +19,7 @@ export const HourlyTab = () => {
         <tbody>
           <tr>
             <StyledTableCell>ощущается как </StyledTableCell>
-            <StyledTableHeaders>{Math.round(feelsLike)}°С</StyledTableHeaders>
+            <StyledTableHeaders>{Math.round(feelsLike)}°</StyledTableHeaders>
           </tr>
           <tr>
             <StyledTableCell>видимость</StyledTableCell>

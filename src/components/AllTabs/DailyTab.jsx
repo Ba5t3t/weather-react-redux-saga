@@ -27,7 +27,7 @@ export const DailyTab = () => {
           </tr>
           <tr>
             <StyledTableCell>скорость ветра</StyledTableCell>
-            <StyledTableHeaders>{Math.round(wind)} м/с</StyledTableHeaders>
+            <StyledTableHeaders>{Math.round(wind)}</StyledTableHeaders>
           </tr>
         </tbody>
       </StyledTable>

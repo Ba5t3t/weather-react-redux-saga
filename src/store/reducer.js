@@ -54,7 +54,7 @@ export const fetchWeather = (city, toggleErrorModal, setErrorModal) => ({
     type: FETCH_WEATHER,
     payload: {
         unit: 'metric',
-        city: city,
+        city,
         toggleErrorModal,
         setErrorModal
     }

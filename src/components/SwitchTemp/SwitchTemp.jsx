@@ -22,7 +22,6 @@ export const SwitchTemp = ({ id, toggled, onChange, image }) => {
   return (
     <>
       <Container>
-        <p>C</p>
         <SwitchInput
           id={id}
           type='checkbox'
@@ -33,7 +32,6 @@ export const SwitchTemp = ({ id, toggled, onChange, image }) => {
         <SwitchLabel htmlFor={id}>
           <SwitchButton image={image} />
         </SwitchLabel>
-        <p>F</p>
       </Container>
     </>
   );

@@ -1,21 +1,26 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
-import { SwitchTemp } from "../../components/SwitchTemp/SwitchTemp";
-
-import Celcius from "../../icons/celcius.svg";
-import Fahrenheit from "../../icons/fahrenheit.svg";
-import TempIcon from "../../icons/cloudy.svg";
-import LocationIcon from "../../icons/location.svg";
+import { useSelector, useDispatch } from "react-redux";
+import { FETCH_WEATHER } from "../../store/reducer";
 import { Search } from "../Search/Search";
+import { TempMeasureSwitch } from "../TempMeasureSwitch/TempMeasureSwitch";
 
 export const CurrentWeather = () => {
+  const dispatch = useDispatch();
   const weather = useSelector((state) => state.weatherData);
-  const temperature = weather?.temp;
   const city = weather?.city;
+  const temperature = weather?.temp;
   const description = weather?.description;
   const icon = weather?.icon;
-
+  /* 
   const [isToggled, setIsToggled] = useState(false);
+
+  const switchTemperature = () => {
+    if (isToggled) {
+      dispatch({ type: FETCH_WEATHER, payload: "metric" });
+    } else {
+      dispatch({ type: FETCH_WEATHER, payload: "imperial" });
+    }
+  }; */
 
   return (
     <div className='current-weather-container'>
@@ -23,7 +28,10 @@ export const CurrentWeather = () => {
         <div className='current-weather-temperature'>
           <div className='temperature'>
             {Math.round(temperature)}
-            {"°С"}
+            {"°"}
+          </div>
+          <div className='temperature-switch'>
+            <TempMeasureSwitch></TempMeasureSwitch>
           </div>
 
           <div className='description'>
@@ -55,7 +63,8 @@ export const CurrentWeather = () => {
           toggled={isToggled}
           onChange={(e) => setIsToggled(e.target.checked)}
           image={TempIcon}
-        ></SwitchTemp> */}
+        ></SwitchTemp>
+         */}
       </div>
     </div>
   );

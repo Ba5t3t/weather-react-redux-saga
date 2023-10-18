@@ -88,6 +88,15 @@ body {
   padding-top: 20px;
 }
 
+.temperature-switch {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 22px;
+  padding-top: 20px;
+  font-size: 20px;
+}
+
 .location {
   display: flex;
   justify-content: left;
