@@ -17,4 +17,10 @@ export const DateTimeContainer = styled.div`
   position: absolute;
   top: 40px;
   left: 790px;
+
+  opacity: 0;
+  transition: 0.5s;
+  animation: show 2s 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
 `;

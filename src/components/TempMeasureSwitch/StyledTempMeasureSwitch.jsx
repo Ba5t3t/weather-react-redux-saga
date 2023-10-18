@@ -10,9 +10,11 @@ export const StyledTempMeasureButton = styled.button`
   text-align: center;
   padding: 0;
   cursor: pointer;
+  transition-duration: 0.5s;
 
   &:hover {
-    box-shadow: 0px 0px 4px 0px #4239954f;
+    box-shadow: 0px 0px 4px 0px lightgrey;
+    transition-duration: 0.5s;
   }
 `;
 

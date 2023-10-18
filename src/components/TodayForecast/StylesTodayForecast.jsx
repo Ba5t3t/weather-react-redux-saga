@@ -16,6 +16,12 @@ export const StyledForecastContainer = styled.div`
   position: absolute;
   top: 450px;
   left: 20px;
+
+  opacity: 0;
+  transition: 0.5s;
+  animation: show 2s 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
 `;
 
 export const StyledForecastCard = styled.div`
@@ -47,16 +53,17 @@ export const StyledForecastButton = styled.button`
   color: white;
   float: left;
   border: none;
-  background-color: ${(props) => (props.$activeTab ? "#4239954f" : 'transparent')};
+  background-color: ${(props) =>
+    props.$activeTab ? "#4239954f" : "transparent"};
   width: 210px;
   font-size: 17px;
   text-align: center;
   padding: 15px 0;
+  transition-duration: 0.7s;
 
   &:hover {
     box-shadow: 0px 0px 4px 0px lightgrey;
   }
-
 `;
 
 export const ForecastContainer = styled.div`
@@ -64,7 +71,7 @@ export const ForecastContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #4239954f
+  background-color: #4239954f;
 `;
 
 export const StyledTable = styled.table`

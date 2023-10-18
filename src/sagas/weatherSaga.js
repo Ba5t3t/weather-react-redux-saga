@@ -10,16 +10,16 @@ function* weatherWorker(props = {}) {
     try {
         const data = yield call(fetchWeatherFromAPI, unit, city)
         yield put(setWeather(data.data))
-        console.log(data.data);
     } catch (error) {
         console.log(error);
         toggleErrorModal();
-        const {cod, message} = error.response.data;
-        setErrorModal(cod, message);
+        //const {code, message} = error
+        //const { cod, message } = error.response.data;
+        setErrorModal(error.response.data.cod, error.response.data.message, error.code, error.message);
         const data = yield call(fetchWeatherFromAPI)
         localStorage.setItem("city", JSON.stringify(city));
         yield put(setWeather(data.data))
-        
+
     }
 }
 

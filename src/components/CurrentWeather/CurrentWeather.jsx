@@ -23,7 +23,7 @@ export const CurrentWeather = () => {
   }; */
 
   return (
-    <div className='current-weather-container'>
+    <div className='current-weather-container anim-show'>
       <div className='card'>
         <div className='current-weather-temperature'>
           <div className='temperature'>

@@ -109,8 +109,21 @@ body {
   width: 286px;
 }
 
+.anim-show {
+  opacity: 0;
+  transition: 0.5s;
+  animation: show 2s 1;
+  animation-fill-mode: forwards;
+}
 
-
+@keyframes show{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
 
 /* 
 .container-button {
